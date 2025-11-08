@@ -2,7 +2,7 @@ using System.Linq.Expressions;
 
 public class Activity
 {
-    private int _seconds;
+    private int _duration;
     private List<string> _activityList = new List<string>() {"Breathing", "Reflecting", "Listing"};
     private List<string> _startingMessage = new List<string>()
     {
@@ -21,11 +21,11 @@ public class Activity
         Console.WriteLine(_startingMessage[type]);
         Console.WriteLine();
         Console.Write("How long, in seconds, would you like for your session? ");
-        while (!int.TryParse(Console.ReadLine(), out _seconds))
+        while (!int.TryParse(Console.ReadLine(), out _duration))
         {
             Console.WriteLine("Invalid input. Please only enter valid numbers: ");
         }
-        return _seconds;
+        return _duration;
     }
 
     public void DisplayEndMessage(int type, int seconds)
